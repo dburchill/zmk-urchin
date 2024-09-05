@@ -24,13 +24,6 @@
 #define BT   3
 #define NPAD 4
 #define FPAD 5
-
-#define SYM 1
-#define EXT 2
-#define FNC 3
-#define SYM2 4
-#define ACCENT 5
-#define SETTINGS 6
 // -----------------
 
 #define TAPPING_TERM 240
@@ -38,7 +31,6 @@
 #define QUICK_TAP_MS 150
 #define SHORTCUT_MS  270
 #define PRIOR_IDLE   150
-
 
 
 /*                              34 KEY MATRIX / LAYOUT MAPPING
@@ -50,6 +42,14 @@
   ╰───────╮     30  31 │ 32  33     ╭───────╯ ╰───────╮     LH1 LH0 │ RH0 RH1     ╭───────╯
           ╰────────────┴────────────╯                 ╰─────────────┴─────────────╯             
 */
+
+
+&mt {
+    flavor = "balanced";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    require-prior-idle-ms = <PRIOR_IDLE>;
+};
 
 
 #define COMBO(name, kp, pos)               \
@@ -82,7 +82,7 @@ combo_##name {                             \
     };
 
 
-ZMK_MACRO(vs_idt,
+	ZMK_MACRO(vs_idt,
         wait-ms = <30>;
         tap-ms = <40>;
         bindings = <&kp LC(K) &kp LC(D)>;
