@@ -37,38 +37,34 @@
           ╰────────────┴────────────╯                 ╰─────────────┴─────────────╯             
 */
 
+#define COMBO(name, kp, pos)               \
+combo_##name {                             \
+    timeout-ms            = <30>;          \
+    require-prior-idle-ms = <TAPPING_TERM>;\
+    bindings              = <kp>;          \
+    key-positions         = <pos>;         \
+    layers                = <0 1>;         \
+};
 
 / {
 
 	combos {
 		compatible = "zmk,combos";
-		// both right thumb keys
-		combo_accent {
-			timeout-ms = <200>;
-			key-positions = <32 33>;
-			bindings = <&mo ACCENT>;
-		};
-		// internal-left & external-right thumb keys
-		combo_sym2 {
-			timeout-ms = <200>;
-			key-positions = <31 33>;
-			bindings = <&mo SYM2>;
-		};
-		// both left thumb keys
-		combo_settings {
-			timeout-ms = <200>;
-			key-positions = <30 31>;
-			bindings = <&mo SETTINGS>;
-		};
-		// left index & middle fingers (home-row)
-		// hold control & space for Adobe workflow
-		combo_ctrl_space {
-			timeout-ms = <200>;
-			key-positions = <12 13>;
-			bindings = <&kp LC(SPACE)>;
-			layers = <BASE>;
-		};
-	};
+	
+        COMBO(combo_esfc, &kp ESC, 2 3)
+        COMBO(combo_cut, &kp LG(X),20 21)
+ 		COMBO(combo_cpy, &kp LG(C), 21 22) 
+        COMBO(combo_pst, &kp LG(V), 22 23)
+        COMBO(combo_pst_wo, &kp LS(LG(V)), 22 24)
+        COMBO(combo_pst_wok, &kp LA(LS(LG(V))),23 24)
+ 		COMBO(combo_app_chgr, &kp LG(SPACE),12 13)
+        COMBO(combo_lasso, &kp LG(LC(LS(N4))), 11 12)
+        COMBO(combo_return, &kp RETURN,32 29)
+        COMBO(combo_bspc, &kp BSPC, 32 9)
+
+        COMBO(combo_indt, &vs_idt, 6 7)
+    };
+
 
 	keymap {
 		compatible = "zmk,keymap";
