@@ -53,6 +53,7 @@
 		};
 	};
 
+
 	combos {
 		compatible = "zmk,combos";
 		// both right thumb keys
