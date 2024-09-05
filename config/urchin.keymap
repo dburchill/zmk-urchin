@@ -27,6 +27,11 @@
 // -----------------
 
 #define TAPPING_TERM 240
+#define SHIFT_TAP_MS 180
+#define QUICK_TAP_MS 150
+#define SHORTCUT_MS  270
+#define PRIOR_IDLE   150
+
 
 
 /*                              34 KEY MATRIX / LAYOUT MAPPING
@@ -69,6 +74,12 @@ combo_##name {                             \
         COMBO(combo_indt, &vs_idt, 6 7)
     };
 
+
+ZMK_MACRO(vs_idt,
+        wait-ms = <30>;
+        tap-ms = <40>;
+        bindings = <&kp LC(K) &kp LC(D)>;
+    )
 
 	keymap {
 		compatible = "zmk,keymap";
