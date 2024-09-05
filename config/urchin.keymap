@@ -159,18 +159,26 @@ ZMK_MACRO(vs_idt,
                                           &trans     &trans           &trans      &trans
             >;
         };
-		
 
-		// Function keys with modifiers
-		fnc_layer {
-			label = "FRow";
-			bindings = <
-			&kp F1 &kp F2 &kp F3 &kp F4 &kp F5                  &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 
-			&sk LALT &sk LGUI &sk LSHIFT &sk LCTRL &kp RALT     &kp F11 &kp F12  &kp PRINTSCREEN &trans &trans
-			&none &none &none &none &none				          &none &none &none &none &none 
-							  &none &none              &none &none  
-			>;
-		};
+
+		bt_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮     ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ RESET    │          │          │          │PROFILE 0 │     │ PROFILE 2│          │          │          │  RESET   │
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│BOOTLOADER│          │          │          │PROFILE 1 │     │ PROFILE 3│          │          │          │BOOTLOADER│
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │CLR BT ALL│ CLEAR BT │     │ PROFILE 4│          │          │          │          │
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤     ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 ╰──────────┴──────────╯     ╰──────────┴──────────╯
+        
+        &sys_reset   &trans     &trans    &trans         &bt BT_SEL 0     &bt BT_SEL 2  &trans     &trans     &trans    &sys_reset
+        &bootloader  &trans     &trans    &trans         &bt BT_SEL 1     &bt BT_SEL 3  &trans     &trans     &trans    &bootloader
+        &trans       &trans     &trans    &bt BT_CLR_ALL &bt BT_CLR       &bt BT_SEL 4  &trans     &trans     &trans    &trans
+                                          &trans         &trans           &trans        &trans
+
+            >;
+        };
 
 		// Low frequency symbols.
 		symbols_2_layer {
