@@ -124,7 +124,7 @@ combo_##name {                             \
 		right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│    [     │    {     │    (     │     4    │     5    │   │   BSPC   │  BSPC    │     )    │    }     │     ]    │
+        //│    ~     │    {     │    (     │     4    │     5    │   │   BSPC   │  BSPC    │     )    │    }     │     ]    │
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│      !   │    @     │   #      │    $     │    %     │   │   left   │  down    │    up    │  right   │   ;      │
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
@@ -133,7 +133,7 @@ combo_##name {                             \
         //                                 │          │          │   │          │          │ 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
         
-        &kp LBKT     &kp LBRC    &kp LPAR    &kp N4     &kp N5         &kp BSPC    &kp BSPC   &kp RPAR   &kp RBRC   &kp RBKT
+        &kp TILDE     &kp LBRC    &kp LPAR    &kp N4     &kp N5         &kp BSPC    &kp BSPC   &kp RPAR   &kp RBRC   &kp RBKT
         &kp EXCL     &kp AT      &kp HASH    &kp DLLR   &kp PRCNT      &kp LEFT    &kp DOWN   &kp UP     &kp RIGHT  &kp SEMI
         &caps_word   &kp GRAVE   &kp CARET   &kp AMPS   &kp ASTRK      &kp HOME    &kp PG_DN  &kp PG_UP  &kp END    &caps_word
                                              &trans     &trans         &trans      &trans
