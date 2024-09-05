@@ -200,16 +200,24 @@ ZMK_MACRO(vs_idt,
             >;
         };
 
-		// Used to type regional accents.
-		accent_layer {
-			label = "Accent";
-			bindings = <
-			&none &none &none &kp IT_CEGR &none                         &none &none &none &none &none 
-			&kp IT_AGRV &kp IT_IGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU &none &none &none &none &none
-			&none &none &none &kp IT_UGRV &none                         &none &none &none &none &none
-									&none &none                         &none &none 
-			>;
-		};
+		fpad_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│   xxx    │   f1     │   f2     │    f3    │   f4     │   │   f13    │    f14   │  f15     │          │          │
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │   f5     │   f6     │    f7    │   f8     │   │  Vol Dwn │          │          │          │          │
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │   f9     │   f10    │    f11   │   f12    │   │  Mute    │          │          │          │          │
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+        
+        &trans       &kp F1     &kp F2    &kp F3     &kp F4           &kp F13     &kp F14    &kp F15     &kp F16    &kp F17
+        &trans       &kp F5     &kp F6    &kp F7     &kp F8           &kp F18     &kp F19    &kp F20     &kp F21    &kp F22
+        &trans       &kp F9     &kp F10   &kp F11    &kp F12          &kp F23     &kp F24    &trans      &trans     &trans
+                                          &trans     &trans           &trans      &trans
+
+            >;
+        };
 
 		// Used to change the keyboard's settings.
 		settings_layer {
