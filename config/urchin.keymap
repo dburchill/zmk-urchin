@@ -26,6 +26,8 @@
 #define SETTINGS 6
 // -----------------
 
+#define TAPPING_TERM 240
+
 
 /*                              34 KEY MATRIX / LAYOUT MAPPING
 
