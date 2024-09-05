@@ -10,6 +10,14 @@
 #include <dt-bindings/zmk/outputs.h>
 #include "keymap_italian.h"
 
+
+
+// Home row mods macro
+// left shift causes a lot of misfirfes 
+#define HRML(k1,k2,k3,k4) &kp k1  &mt LCTRL k2  &mt LALT  k3  &mt LGUI  k4
+#define HRMR(k1,k2,k3,k4) &mt RGUI  k1  &mt RALT  k2  &mt RCTRL k3  &mt RSHFT k4
+
+
 // Layer definitions
 #define BASE 0
 #define RIG  1
