@@ -37,6 +37,7 @@
           ╰────────────┴────────────╯                 ╰─────────────┴─────────────╯             
 */
 
+
 #define COMBO(name, kp, pos)               \
 combo_##name {                             \
     timeout-ms            = <30>;          \
@@ -46,11 +47,12 @@ combo_##name {                             \
     layers                = <0 1>;         \
 };
 
+
 / {
 
 	combos {
-		compatible = "zmk,combos";
-	
+        compatible = "zmk,combos";
+		
         COMBO(combo_esfc, &kp ESC, 2 3)
         COMBO(combo_cut, &kp LG(X),20 21)
  		COMBO(combo_cpy, &kp LG(C), 21 22) 
